@@ -8,7 +8,6 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
 }
 
 #menu::before,
@@ -29,4 +28,31 @@
 #menu::after {
     left: 0;
     top: 20px;
+}
+
+#container {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--menu-bar-width);
+    padding: 20px 0;
+}
+
+#container:hover #menu{
+    background-color: transparent;
+}
+
+#container:hover > #menu::before,
+#container:hover > #menu::after {
+    top: 0;
+    transition: all .35s ease-in-out;
+}
+
+#container:hover > #menu::before {
+    transform: rotate(45deg);
+}
+
+#container:hover > #menu::after {
+    transform: rotate(-45deg);
 }
